@@ -1,14 +1,23 @@
-import Webpack from 'webpack';
-const path from 'path';
+// import Webpack from 'webpack';
+const webpack = require('webpack');
+var Htmlwebpackplugin = require('html-webpack-plugin');
+const path = require('path');
+// const path from 'path';
 
 const config = {
   // 入口文件
-  entry: './src/main.js',
+  entry: './src/app.js',
   // 出口文件配置
   output: {
     path: path.resolve(__dirname, "build/"),
     filename: 'bundle.[chunkhash].js',
     chunkFilename: '[name]-[chunkhash:8].js'
+  },
+  devServer: {
+    //historyApiFallback: true,
+    hot: true,
+    inline: true,
+    // progress: true
   },
   devtool: "source-map",
   module: {
@@ -61,10 +70,12 @@ const config = {
     new Htmlwebpackplugin({
       title: "vue小测试",
       hash: true,
-      template: './index1.html',
-      inject: 'body', 
+      template: './index.html',
+      inject: 'body',
       filename: './index.html'
     }),
     new webpack.optimize.CommonsChunkPlugin({name: 'common', filename: 'common.[hash].js'})
   ]
 }
+
+module.exports = config;
