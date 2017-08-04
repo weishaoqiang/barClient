@@ -1,10 +1,15 @@
-<style lang="css">
+<style lang="less">
 </style>
 <template lang="html">
-  <div>123</div>
+  <router-view></router-view>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+
+    }
+  }
 }
 </script>
