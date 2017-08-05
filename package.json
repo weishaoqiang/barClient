@@ -4,7 +4,7 @@
   "description": "bar client project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 0.0.0.0 --port 5008 --hot --inline"
+    "dev": "webpack-dev-server --host 127.0.0.1 --port 5008 --hot --inline --open"
   },
   "author": "weishaoqiang",
   "license": "ISC",
